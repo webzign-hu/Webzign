@@ -1674,7 +1674,7 @@ blockquote {
 .navbar {
   z-index: 99;
   background-color: #0000;
-  background-image: url('../images/Névtelen-terv.png');
+  background-image: url('images/Névtelen-terv.png');
   background-position: 0 0;
   background-size: auto;
   justify-content: center;
