@@ -249,13 +249,13 @@
  <script>
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
+    const formWrapper = form.closest(".form-block"); // vagy más container, ha más az elnevezés
     const successMessage = document.querySelector(".success-message");
     const errorMessage = document.querySelector(".error-message");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Előzetesen elrejtjük az üzeneteket
       successMessage.style.display = "none";
       errorMessage.style.display = "none";
 
@@ -271,6 +271,8 @@
       .then(response => {
         if (response.ok) {
           form.reset();
+          // Form elrejtése
+          form.style.display = "none";
           successMessage.style.display = "block";
         } else {
           throw new Error("Sikertelen küldés");
