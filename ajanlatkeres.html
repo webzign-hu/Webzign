@@ -249,7 +249,7 @@
  <script>
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
-    const formWrapper = form.closest(".form-block"); // vagy más container, ha más az elnevezés
+    const formContent = document.querySelector(".form"); // ez tartalmazza a mezőket és gombot
     const successMessage = document.querySelector(".success-message");
     const errorMessage = document.querySelector(".error-message");
 
@@ -271,8 +271,7 @@
       .then(response => {
         if (response.ok) {
           form.reset();
-          // Form elrejtése
-          form.style.display = "none";
+          formContent.style.display = "none"; // ez tünteti el a mezőket és gombot
           successMessage.style.display = "block";
         } else {
           throw new Error("Sikertelen küldés");
