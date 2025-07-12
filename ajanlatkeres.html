@@ -253,6 +253,10 @@
     const form = e.target;
     const formData = new FormData(form);
 
+    // Először elrejtjük az üzenet blokkokat
+    document.querySelector(".w-form-done").style.display = "none";
+    document.querySelector(".w-form-fail").style.display = "none";
+
     fetch("https://formsubmit.co/webzign.hu@gmail.com", {
       method: "POST",
       body: formData,
