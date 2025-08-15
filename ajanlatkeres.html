@@ -255,14 +255,14 @@
     
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-
+    
         successMessage.style.display = "none";
         errorMessage.style.display = "none";
-    
+
         const formData = new FormData(form);
-    
-        // Normál végpont, nem az /ajax/ verzió
-        fetch("https://formsubmit.click/webzign.hu@gmail.com", {
+
+    // Normál végpont, nem az /ajax/ verzió
+        fetch("https://formsubmit.co/webzign.hu@gmail.com", {
           method: "POST",
           headers: {
             "Accept": "application/json"
