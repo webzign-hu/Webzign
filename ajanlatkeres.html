@@ -267,17 +267,17 @@
             "Accept": "application/json"
           },
           body: formData
-          form.reset();
+          //form.reset();
           formContent.style.display = "none"; // ez tünteti el a mezőket és gombot
           successMessage.style.display = "block";
         })
         .then(response => {
           if (response.ok) {
-            form.reset();
+            //form.reset();
             formContent.style.display = "none"; // ez tünteti el a mezőket és gombot
             successMessage.style.display = "block";
           } else {
-            form.reset(); //paste
+            //form.reset(); //paste
             formContent.style.display = "none"; // ez tünteti el a mezőket és gombot  // paste
             successMessage.style.display = "block"; // paste
             //throw new Error("Sikertelen küldés");
@@ -285,7 +285,7 @@
         })
         .catch(error => {
           console.error("Hiba:", error);
-          form.reset(); //paste
+          //form.reset(); //paste
           formContent.style.display = "none"; // ez tünteti el a mezőket és gombot // pastze
           successMessage.style.display = "block";  //paste
        //   errorMessage.style.display = "block";
