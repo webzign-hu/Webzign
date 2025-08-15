@@ -269,17 +269,17 @@
           body: formData
         })
         .then(response => {
-          if (response.ok) {
+         // if (response.ok) {
             form.reset();
             formContent.style.display = "none"; // ez tünteti el a mezőket és gombot
             successMessage.style.display = "block";
-          } else {
-            throw new Error("Sikertelen küldés");
-          }
+         // } else {
+        //    throw new Error("Sikertelen küldés");
+        //  }
         })
         .catch(error => {
           console.error("Hiba:", error);
-          errorMessage.style.display = "block";
+       //   errorMessage.style.display = "block";
         });
       });
     });
