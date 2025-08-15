@@ -249,7 +249,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("contact-form");
-      const formContent = document.getElementById("contact-form"); // ez tartalmazza a mezőket és gombot
+      const formContent = document.getElementById("contact-form"); // mezők és gomb
       const successMessage = document.querySelector(".success-message");
       const errorMessage = document.querySelector(".error-message");
 
@@ -263,22 +263,16 @@
 
         fetch("https://formsubmit.click/webzign.hu@gmail.com", {
           method: "POST",
-          headers: {
-            "Accept": "application/json"
-          },
+          mode: "no-cors", // megakadályozza az átirányítást
           body: formData
         })
-        .then(response => {
-          if (response.ok) {
-            form.reset();
-            formContent.style.display = "none"; // ez tünteti el a mezőket és gombot
-            successMessage.style.display = "block";
-          } else {
-            throw new Error("Sikertelen küldés");
-          }
+        .then(() => {
+          // Ha a kérést sikeresen elindította
+          form.reset();
+          formContent.style.display = "none";
+          successMessage.style.display = "block";
         })
-        .catch(error => {
-          console.error("Hiba:", error);
+        .catch(() => {
           errorMessage.style.display = "block";
         });
       });
