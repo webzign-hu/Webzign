@@ -249,32 +249,36 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("contact-form");
-      const formContent = document.querySelector(".form"); // a mezők + gomb
+      const formContent = document.getElementById("contact-form"); // ez tartalmazza a mezőket és gombot
       const successMessage = document.querySelector(".success-message");
       const errorMessage = document.querySelector(".error-message");
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-    
-        // Üzenetek elrejtése
+
         successMessage.style.display = "none";
         errorMessage.style.display = "none";
 
         const formData = new FormData(form);
-    
-        fetch("https://formsubmit.click/webzign.hu@gmail.com", {
+
+        fetch("https://formsubmit.co/ajax/webzign.hu@gmail.com", {
           method: "POST",
-          mode: "no-cors", // CORS-hiba elkerülése
+          headers: {
+            "Accept": "application/json"
+          },
           body: formData
         })
-        .then(() => {
-          // Ha a fetch eljutott idáig, a kérés elindult → siker
-          form.reset();
-          formContent.style.display = "none";
-          successMessage.style.display = "block";
+        .then(response => {
+          if (response.ok) {
+            form.reset();
+            formContent.style.display = "none"; // ez tünteti el a mezőket és gombot
+            successMessage.style.display = "block";
+          } else {
+            throw new Error("Sikertelen küldés");
+          }
         })
-        .catch(() => {
-          // Ha a fetch már itt elhasalt (pl. offline), akkor hiba
+        .catch(error => {
+          console.error("Hiba:", error);
           errorMessage.style.display = "block";
         });
       });
