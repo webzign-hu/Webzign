@@ -5,5 +5,12 @@
     "type": "default",
     "path": "content/items/teszt-1.md",
     "filename": "teszt-1.md"
+  },
+  {
+    "title": "teszt3",
+    "image": "/uploads/1757674390103-phoenixneggyzetracsnelkul.png",
+    "type": "default",
+    "path": "content/items/teszt3.md",
+    "filename": "teszt3.md"
   }
 ]
