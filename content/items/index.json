@@ -1,5 +1,12 @@
 [
   {
+    "title": "dgdr",
+    "image": "",
+    "type": "default",
+    "path": "content/items/dgdr.md",
+    "filename": "dgdr.md"
+  },
+  {
     "title": "teszt-2",
     "image": "/uploads/phoenixneggyzetracsnelkul-47183e80.png",
     "type": "default",
