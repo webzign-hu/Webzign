@@ -286,6 +286,7 @@ window.onload = function() {
         .then(() => {
             form.reset();
             form.style.display = "none";
+            errorMessage.style.display = "none";
             successMessage.style.display = "block";
         })
         .catch(err => {
