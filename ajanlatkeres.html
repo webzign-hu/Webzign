@@ -265,7 +265,6 @@
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
-
 <script>
 window.onload = function() {
     // Inicializálás
@@ -278,8 +277,10 @@ window.onload = function() {
     form.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        successMessage.style.display = "none";
-        errorMessage.style.display = "none";
+        // Minden előző Webflow üzenet elrejtése
+        document.querySelectorAll(".w-form-done, .w-form-fail").forEach(el => el.style.display = "none");
+
+        console.log("Email value:", form.email.value);
 
         emailjs.sendForm("service_hm2zp5h", "template_m838134", this)
         .then(() => {
