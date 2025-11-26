@@ -98,7 +98,7 @@
             <input type="hidden" name="_captcha" value="false">
         </form>
 
-        <div class="success-message" style="display: none;">
+        <div class="success-message w-form-done" style="display: none;">
         <div>Köszönjük az üzeneted! Kollégánk hamarosan felveszi veled a kapcsolatot.</div>
       </div>
       <div class="error-message" style="display: none;">
@@ -278,7 +278,7 @@ window.onload = function() {
         e.preventDefault();
 
         // Minden előző Webflow üzenet elrejtése
-        document.querySelectorAll(".w-form-done, .w-form-fail").forEach(el => el.style.display = "none");
+        //document.querySelectorAll(".w-form-done, .w-form-fail").forEach(el => el.style.display = "none");
 
         console.log("Email value:", form.email.value);
 
